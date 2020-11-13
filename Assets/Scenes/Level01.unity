@@ -21691,7 +21691,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1021661920}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1870154730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
@@ -22505,6 +22505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1274450999}
+  - component: {fileID: 1274451000}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -22520,12 +22521,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274450998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: -0.0805, z: 0}
+  m_LocalPosition: {x: -0.0105, y: -0.0805, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1645855865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274451000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274450998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fcd271608ae49feb2721e221d3a97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDestroy: {fileID: 1870154730}
+  objectToDestruct: {fileID: 942815085}
 --- !u!1 &1278237412
 GameObject:
   m_ObjectHideFlags: 0
@@ -24483,8 +24498,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00008058548, y: -0.038924288}
-  m_Size: {x: 0.15936604, y: 0.22335581}
+  m_Offset: {x: -0.006583214, y: -0.04109801}
+  m_Size: {x: 0.17269364, y: 0.21900837}
   m_Direction: 0
 --- !u!50 &1645855862
 Rigidbody2D:
@@ -24520,6 +24535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpForce: 300
   groundCheck: {fileID: 1274450999}
   groundCheckRadius: 0.4
   collisionLayers:
@@ -24529,7 +24545,7 @@ MonoBehaviour:
   animator: {fileID: 1645855869}
   spriteRenderer: {fileID: 1645855864}
   joystick: {fileID: 1006803282}
-  jumpSpeed: 6
+  PlateCk: 0
 --- !u!212 &1645855864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33392,6 +33408,12 @@ Transform:
   m_Father: {fileID: 434381761}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1870154730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 1021661920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1878359749
 GameObject:
   m_ObjectHideFlags: 0

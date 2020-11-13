@@ -30026,5 +30026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 1768547247653370621, guid: 3aafda553380c4b01bdf0f5bd0ed659d,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSpawn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aafda553380c4b01bdf0f5bd0ed659d, type: 3}

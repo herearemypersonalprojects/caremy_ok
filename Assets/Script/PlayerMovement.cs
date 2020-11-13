@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {  
     public float moveSpeed;
     private bool isGrounded;
+    public float jumpForce;
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -13,22 +14,43 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Joystick joystick;
-    public float jumpSpeed = 5;
 
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private bool SprintOn;
+    public bool PlateCk;
 
     void Update()
-    {  
-
-       horizontalMovement = joystick.Horizontal * moveSpeed;
-       
-       
+    {           
        Flip(rb.velocity.x);
 
        float characterVelocity = Mathf.Abs(rb.velocity.x);
        animator.SetFloat("Speed", characterVelocity);
+       
+       if(PlateCk == true)
+       {
+          horizontalMovement = joystick.Horizontal * moveSpeed;
+          moveSpeed = 5;
+       }else 
+       {
+        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+
+        MovePlayer(horizontalMovement);
+
+        moveSpeed = 250;
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+       {
+         SprintOn = true;
+        if(SprintOn == true && isGrounded)
+        {
+        rb.AddForce(new Vector2(0f, jumpForce));
+        }else
+        {
+            SprintOn = false;
+        }
+       }
+       }
     }
    
     void FixedUpdate()
@@ -36,12 +58,28 @@ public class PlayerMovement : MonoBehaviour
        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);     
        MovePlayer(horizontalMovement);
        // Debug.Log(horizontalMovement);
+
+       #if UNITY_ANDROID
+           PlateCk = true;
+           #endif
+
+       #if UNITY_IOS
+           PlateCk = true
+           #endif
+
+       #if UNITY_UNITY_STANDALONE_OSX
+           PlateCk = false
+           #endif
+
+       #if UNITY_UNITY_STANDALONE_WIN
+           PlateCk = false
+           #endif
     }
 
     void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.35f);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.35f);     
     }
 
     public void jumpButton()
@@ -49,13 +87,12 @@ public class PlayerMovement : MonoBehaviour
         SprintOn = true;
         if(SprintOn == true && isGrounded)
         {
-        rb.velocity = Vector2.up * jumpSpeed;
+        rb.AddForce(new Vector2(0f, jumpForce));
         }else
         {
             SprintOn = false;
         }
     }
-
     void Flip(float _velocity)
     {
         if (_velocity > 0.1f)
