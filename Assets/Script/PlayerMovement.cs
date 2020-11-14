@@ -29,15 +29,27 @@ public class PlayerMovement : MonoBehaviour
        
        if(PlateCk == true)
        {
-          horizontalMovement = joystick.Horizontal * moveSpeed;
+           horizontalMovement = joystick.Horizontal * moveSpeed;
           moveSpeed = 5;
+
+          if(Input.GetButtonDown("Jump") && isGrounded)
+       {
+         SprintOn = true;
+        if(SprintOn == true && isGrounded)
+        {
+        rb.AddForce(new Vector2(0f, jumpForce));
+        }else
+        {
+            SprintOn = false;
+        }
+       }
        }else 
        {
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
 
         MovePlayer(horizontalMovement);
 
-        moveSpeed = 600;
+        moveSpeed = 700;
 
         if(Input.GetButtonDown("Jump") && isGrounded)
        {
@@ -51,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         }
        }
        }
+       
     }
    
     void FixedUpdate()
@@ -74,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
        #if UNITY_UNITY_STANDALONE_WIN
            PlateCk = false
            #endif
-    }
+  }
 
     void MovePlayer(float _horizontalMovement)
     {
@@ -109,5 +122,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
-
 }
+
+
