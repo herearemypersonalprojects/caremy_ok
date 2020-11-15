@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
         MovePlayer(horizontalMovement);
 
-        moveSpeed = 450;
+        moveSpeed = 500;
 
         if(Input.GetButtonDown("Jump") && isGrounded)
        {

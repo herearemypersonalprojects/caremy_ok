@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
         PlayerMovement.instance.animator.SetTrigger("Die");
         PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Kinematic;
         PlayerMovement.instance.playerCollider.enabled = false;
+        GameOverManager.instance.OnPlayerDeath();
     }
 
     public IEnumerator InvincibilityFlash()

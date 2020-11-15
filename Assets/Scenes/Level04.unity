@@ -121,6 +121,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &79694834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3773923026819097993, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_Name
+      value: CurrentSceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 448.43082
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 235.9701
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -430.66446
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469060502166651810, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511274314012846531, guid: cd30250d610dd4ee4b38543058bb69cf,
+        type: 3}
+      propertyPath: isPlayerPresentByDefault
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd30250d610dd4ee4b38543058bb69cf, type: 3}
 --- !u!1 &88292259
 GameObject:
   m_ObjectHideFlags: 0
@@ -20976,7 +21050,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 28
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -21336,7 +21410,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 20
-      m_TileSpriteIndex: 27
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -24644,9 +24718,8 @@ Tilemap:
   - m_RefCount: 211
     m_Data: {fileID: 6202079318447832090, guid: 7dc3d8fded3ce4b678d8fdd26f1bd601,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -5117276836014666505, guid: 7dc3d8fded3ce4b678d8fdd26f1bd601,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -24674,13 +24747,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 3960382931473224707, guid: 7dc3d8fded3ce4b678d8fdd26f1bd601,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -5117276836014666505, guid: 7dc3d8fded3ce4b678d8fdd26f1bd601,
+      type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 6217686846738184359, guid: 7dc3d8fded3ce4b678d8fdd26f1bd601,
       type: 3}
