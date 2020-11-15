@@ -18,7 +18,8 @@ public class PlayerHealth : MonoBehaviour
    private void Awake()
    {
        if(instance != null)
-       {Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
+       {
+        Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
         return;
 
        }
@@ -51,10 +52,26 @@ public class PlayerHealth : MonoBehaviour
         {
           currentHealth -= damage;
           healthBar.SetHealth(currentHealth); 
+
+          if(currentHealth <= 0)
+          {
+            Die();
+            return;
+          }
+
           isInvincible = true;
           StartCoroutine(InvincibilityFlash());
           StartCoroutine(HandleInvincibilityDelay());
         }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Le joueur est éliminé");
+        PlayerMovement.instance.enabled = false;
+        PlayerMovement.instance.animator.SetTrigger("Die");
+        PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        PlayerMovement.instance.playerCollider.enabled = false;
     }
 
     public IEnumerator InvincibilityFlash()

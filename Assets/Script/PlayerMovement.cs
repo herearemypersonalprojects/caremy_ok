@@ -13,12 +13,28 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public CapsuleCollider2D playerCollider;
     public Joystick joystick;
 
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private bool SprintOn;
     public bool PlateCk;
+
+    public static PlayerMovement instance;
+
+   private void Awake()
+   {
+       if(instance != null)
+       {
+        Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+        return;
+
+       }
+       
+    
+       instance = this;
+   }
 
     void Update()
     {           
@@ -45,11 +61,11 @@ public class PlayerMovement : MonoBehaviour
        }
        }else 
        {
-        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
         MovePlayer(horizontalMovement);
 
-        moveSpeed = 700;
+        moveSpeed = 450;
 
         if(Input.GetButtonDown("Jump") && isGrounded)
        {
