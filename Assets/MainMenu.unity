@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 0a7deee6467974b32920183dd47a55c8, type: 2}
+  resolutionDropdown: {fileID: 1141801123}
 --- !u!114 &1164122980
 MonoBehaviour:
   m_ObjectHideFlags: 0
